@@ -11,13 +11,13 @@ S3_BUCKET_NAME =
 def lambda_handler(event, context):
 
     filename = event['Records'][0]['s3']['object']['key']
-    file_conent = read_s3_file(filename)
+    file_content = read_s3_file(filename)
 
-    if type(file_conent) is list:
-        for object in file_conent:
-            write_to_dynamo_db(object)
+    if type(file_content) is list:
+        for obj in file_content:
+            write_to_dynamo_db(obj)
     else:
-        write_to_dynamo_db(file_conent)
+        write_to_dynamo_db(file_content)
 
     print(f"successfully written object to DynamoDB table: {TABLE_NAME}")
 
@@ -25,8 +25,8 @@ def lambda_handler(event, context):
 def read_s3_file(filename):
     try:
         file = S3_CLIENT.Object(S3_BUCKET_NAME, filename).get()
-        file_conent = json.load(file["Body"])
-        return file_conent
+        file_content = json.load(file["Body"])
+        return file_content
 
     except Exception as e:
         print(f"Could not read json file: {filename} from S3 bucket: {S3_BUCKET_NAME}, error message: {str(e)}")

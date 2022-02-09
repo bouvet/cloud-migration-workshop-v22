@@ -17,7 +17,7 @@ Den skal så skrive innholdet i filen til en DynamoDB-tabell.
 
 
 ## Oppgave 2
-Opprett en API Gateway som kan kalle på en Lambda funksjon. Denne Lambda funksjonen skal returnere ett objekt basert paa en id fra tabellen du opprettet i oppgave 1.
+Opprett en API Gateway som kan kalle på en Lambda funksjon. Denne Lambda funksjonen skal returnere ett objekt basert på en id fra tabellen du opprettet i oppgave 1.
 
 1. Lag en ny AWS Lambda-funksjon
    1. Lim inn kode for oppgave 2
@@ -25,9 +25,13 @@ Opprett en API Gateway som kan kalle på en Lambda funksjon. Denne Lambda funksj
    3. Legg til IAM policy på Lambda-funksjonens IAM rolle:
       1. `AmazonDynamoDBReadOnlyAccess`
 2. Opprett en HTTP API Gateway.
-3. Legg til en Lambda-integrasjon I API Gateway. 
-   1. Den skal peke på din nye Lambda-funksjon.
-   2. Bruk en HTTP GET metode
-   3. Legg til den resource path-en du ønsker, inkludert et path parameter f.eks: `/birds/{id}`.
-4. Test endepunkt ved å kalle URL-en som er vist i API Gatewayen.
+   1. Legg til en Lambda-integrasjon I API Gateway.
+   2. Den skal peke på din nye Lambda-funksjon.
+   3. Bruk en HTTP GET metode
+   4. Legg til den resource path-en du ønsker, inkludert et path parameter som heter `id` f.eks: `/birds/{id}`.
+3. Test endepunktet ved å kalle URL-en som er vist i API Gateway-en.
 
+
+## "shameless reklame" for videoer som gir svar på oppgavene:
+- [Lambda trigger on s3 upload event](https://www.youtube.com/watch?v=-x3A4DG0Kjw)
+- [API Gateway with lambda integration](https://www.youtube.com/watch?v=TzbImff5KO0)

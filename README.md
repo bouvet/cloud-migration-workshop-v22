@@ -1,6 +1,6 @@
 ## Oppgave 1
 Lag en AWS Lambda-funksjon som kan lytte på filer som blir lastet opp til en S3-bøtte.
-Lambda-funksjonen skal bruke "upload eventet" til å lese den opplastede filen fra S3-bøtta
+Lambda-funksjonen skal bruke "upload eventet" til å lese den opplastede filen fra S3-bøtta.
 Den skal så skrive innholdet i filen til en DynamoDB-tabell.
 
 > NB: Bruk gjerne eget navn på alle AWS-ressurser slik du lett kan skille dine resurser fra andres.

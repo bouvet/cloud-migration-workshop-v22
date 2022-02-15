@@ -3,11 +3,11 @@ Lag en AWS Lambda-funksjon som kan lytte på filer som blir lastet opp til en S3
 Lambda-funksjonen skal bruke "upload eventet" til å lese den opplastede filen fra S3-bøtta
 Den skal så skrive innholdet i filen til en DynamoDB-tabell.
 
-> NB: Bruk gjerne eget navn på alle AWS ressurser slik du lett kan skille dine resurser fra andres.
+> NB: Bruk gjerne eget navn på alle AWS-ressurser slik du lett kan skille dine resurser fra andres.
 
 ### Del 1: Opprett AWS ressurser
 1. Opprett en S3 bøtte (med default settings). Navnet til S3-bøtta må være globalt unikt.
-2. Opprett en DynamoDB tabell 
+2. Opprett en DynamoDB tabell
    1. "Partition key" skal hete: `id` (la "Sort key" stå blankt).
    2. Ellers bare default settings på alt.
 
@@ -20,8 +20,8 @@ Den skal så skrive innholdet i filen til en DynamoDB-tabell.
    2. `AmazonDynamoDBFullAccess`
 
 ### Del 3: Legg til AWS Lambda trigger
-1. Gå tilbake til din AWS Lambda-funksjon. 
-2. Legg til Lambda Trigger :
+1. Gå tilbake til din AWS Lambda-funksjon.
+2. Legg til Lambda Trigger:
    1. Velg `S3` og din S3-bøtte.
    2. Lytt på følgende event: `All object create events`.
    3. Les og huk av check-box for "Recursive invocation".
@@ -34,7 +34,7 @@ Den skal så skrive innholdet i filen til en DynamoDB-tabell.
 
 
 ## Oppgave 2
-Nå skal vi opprette en API Gateway som kan kalle på en Lambda funksjon. 
+Nå skal vi opprette en API Gateway som kan kalle på en Lambda funksjon.
 Denne Lambda funksjonen skal returnere ett objekt (basert på id-en) fra tabellen du opprettet i oppgave 1.
 
 ### Del 1: Opprett ny AWS Lambda funksjon
@@ -48,7 +48,7 @@ Denne Lambda funksjonen skal returnere ett objekt (basert på id-en) fra tabelle
 ### Del 2: Opprett en API Gateway
 1. Opprett en HTTP API Gateway:
    1. I "Step 1": Legg til en Lambda-integrasjon, denne skal peke på din nye Lambda-funksjon.
-   2. I "Step 2": Velg GET som HTTP metode og definser ønsket path, inkludert et path parameter som heter `id` f.eks: `/birds/{id}`.
+   2. I "Step 2": Velg GET som HTTP metode og definer ønsket path, inkludert et path parameter som heter `id` f.eks: `/birds/{id}`.
    3. I "Step 3": Fortsett uten å gjøre noen endrigner.
    4. I "Step 4": Klikk "Create".
 

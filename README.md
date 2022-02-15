@@ -58,6 +58,12 @@ Denne Lambda funksjonen skal returnere ett objekt (basert på id-en) fra tabelle
 > NB: Husk å legge til resource path og id-en til et objekt som path parameter.
 
 
-## "shameless reklame" for videoer som gir svar på oppgavene:
-- [Lambda trigger on s3 upload event](https://www.youtube.com/watch?v=-x3A4DG0Kjw)
-- [API Gateway with lambda integration](https://www.youtube.com/watch?v=TzbImff5KO0)
+## Ekstra
+1. Lag en AWS Lambda funksjon som kan trigges av meldinger på en SQS-kø.
+2. Lag en AWS Lambda funksjon som kan sende meldinger til et SNS-topic.
+
+## "shameless reklame" med løsningsforslag:
+- Oppgave 1: [Lambda trigger on s3 upload event](https://www.youtube.com/watch?v=-x3A4DG0Kjw)
+- Oppgave 2: [API Gateway with lambda integration](https://www.youtube.com/watch?v=TzbImff5KO0)
+- Ekstraoppgave 1: [Lambda trigger on SQS messages](https://www.youtube.com/watch?v=eMknzzUqevQ)
+- Ekstraoppgave 2: [Send meldinger fra en Lambda funksjon til et SNS-topic](https://www.youtube.com/watch?v=NrWkyzQMh4w)
